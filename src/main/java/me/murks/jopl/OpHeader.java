@@ -2,6 +2,9 @@ package me.murks.jopl;
 
 import java.util.Date;
 
+/**
+ * Class representing the header of a OPML document.
+ */
 public class OpHeader {
     private final String title;
     private final Date dateCreated;

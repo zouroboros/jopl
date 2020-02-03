@@ -3,6 +3,9 @@ package me.murks.jopl;
 import java.net.URL;
 import java.util.Objects;
 
+/**
+ * Represents one outline node in a OPML document.
+ */
 public class OpOutline {
     private final String text;
     private final String title;

@@ -3,11 +3,19 @@ package me.murks.jopl;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.IOException;
-import java.io.Writer;
 
+/**
+ * Writes a given {@link OpFile} using an {@link XmlSerializer}.
+ */
 public class OpWriter {
     private XmlSerializer serializer;
 
+    /**
+     * Write the given {@link OpFile} using the given {@link XmlSerializer}.
+     * @param file The content to write
+     * @param output The serializer to be used for writing
+     * @throws IOException
+     */
     public void write(OpFile file, XmlSerializer output) throws IOException {
         serializer = output;
         serializer.startDocument("UTF-8", false);

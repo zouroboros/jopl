@@ -4,6 +4,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * Class for working with RFC822 formatted dates.
+ */
 class RFC822 {
     public static Date readDate(String string) throws ParseException {
 

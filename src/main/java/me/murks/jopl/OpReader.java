@@ -10,12 +10,23 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Reads a OPML document into an {@link OpFile}.
+ */
 public class OpReader {
 
     private String title;
     private Date dateCreated;
     private List<OpOutline> outlines;
 
+    /**
+     * Reads the file using the given xml parser.
+     * @param parser
+     * @return
+     * @throws XmlPullParserException
+     * @throws IOException
+     * @throws ParseException
+     */
     public OpFile readFile(XmlPullParser parser) throws XmlPullParserException, IOException, ParseException {
         int eventType = parser.getEventType();
         while(eventType != XmlPullParser.END_DOCUMENT) {

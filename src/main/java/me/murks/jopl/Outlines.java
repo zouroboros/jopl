@@ -3,6 +3,10 @@ package me.murks.jopl;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * This class provides a simpler interface to the contents of a OPML document then the {@link OpFile} class.
+ * Objects of this class can be created and converted from and to {@link OpFile} objects.
+ */
 public class Outlines {
     private final String title;
     private final Date dateCreated;
