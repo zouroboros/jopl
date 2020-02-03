@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class DateUtils {
+class DateUtils {
     public static Date readDate(String string) throws ParseException {
 
         // replace nonstandard time zone identifier
