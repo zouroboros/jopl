@@ -29,4 +29,8 @@ public class Outlines {
     public List<OpOutline> getOutlines() {
         return outlines;
     }
+
+    public OpFile getOpFile() {
+        return new OpFile(new OpHeader(title, dateCreated), new OpBody(outlines));
+    }
 }

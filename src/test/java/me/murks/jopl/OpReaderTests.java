@@ -30,7 +30,7 @@ public class OpReaderTests {
         XmlPullParser parser = factory.newPullParser();
         parser.setInput(new StringReader(TestFiles.dateCreatedTest));
         OpFile file = new OpReader().readFile(parser);
-        Assert.assertEquals(new Date(1580584261000l), file.getHeader().getDateCreated());
+        Assert.assertEquals(new Date(1580584261000L), file.getHeader().getDateCreated());
     }
 
     @Test

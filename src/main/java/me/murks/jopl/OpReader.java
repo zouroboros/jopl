@@ -40,7 +40,7 @@ public class OpReader {
                 if(OpmlSymbols.Title.isTag(parser.getName())) {
                     title = parser.nextText();
                 } else if(OpmlSymbols.DateCreated.isTag(parser.getName())) {
-                    dateCreated = DateUtils.readDate(parser.nextText());
+                    dateCreated = RFC822.readDate(parser.nextText());
                 }
 
             }

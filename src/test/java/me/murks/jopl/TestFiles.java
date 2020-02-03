@@ -1,13 +1,34 @@
 package me.murks.jopl;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+
 class TestFiles {
 
-    public static final String titleTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><title>Test Title</title></head><body></body></opml>";
+    public static final Outlines titleTestOutlines = new Outlines("Test Title", null, Collections.emptyList());
+    public static final String titleTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><title>Test Title</title></head><body /></opml>";
 
-    public static final String dateCreatedTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><dateCreated>01 Feb 20 20:11:01 +0100</dateCreated></head><body></body></opml>";
+    public static final Outlines dateCreatedOutlines = new Outlines(null, new Date(1580584261000L), Collections.emptyList());
+    public static final String dateCreatedTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><dateCreated>01 Feb 20 20:11:01 +0100</dateCreated></head><body /></opml>";
 
-    public static final String outlineTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><body>" +
-            "<outline text=\"Outline Text\" title=\"Outline Title\" type=\"test\" xmlUrl=\"http://example.org/xml\" htmlUrl=\"http://example.org/html\" />" +
+    public static Outlines outlineTestOutlines;
+
+    static {
+        try {
+            outlineTestOutlines = new Outlines(null, null,
+                        Arrays.asList(new OpOutline("Outline Text", "Outline Title", "test",
+                                new URL("http://example.org/xml"), new URL("http://example.org/html"))));
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static final String outlineTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head /><body>" +
+            "<outline title=\"Outline Title\" text=\"Outline Text\" type=\"test\" xmlUrl=\"http://example.org/xml\" htmlUrl=\"http://example.org/html\" />" +
             "</body></opml>";
 
     public static final String antennaPodFile = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?>\n" +

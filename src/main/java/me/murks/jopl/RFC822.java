@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-class DateUtils {
+class RFC822 {
     public static Date readDate(String string) throws ParseException {
 
         // replace nonstandard time zone identifier
@@ -22,5 +22,10 @@ class DateUtils {
         }
 
         throw new ParseException(str, 0);
+    }
+
+    public static String formatDate(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("dd MMM yy HH:mm:ss Z", Locale.US);
+        return format.format(date);
     }
 }

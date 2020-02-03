@@ -3,11 +3,10 @@ package me.murks.jopl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+import org.xmlpull.v1.XmlSerializer;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.Reader;
-import java.io.StringReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 
 /**
@@ -62,5 +61,31 @@ public class Jopl {
     private static XmlPullParser parser() throws XmlPullParserException {
         XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
         return factory.newPullParser();
+    }
+
+    /**
+     * Writes the OPML markup of the given {@link Outlines} into a string.
+     * @param outlines The outlines to write.
+     * @param serializer The xml serializer to use.
+     * @return String containing OPML markup.
+     * @throws IOException In case the writing fails.
+     */
+    public static String write(Outlines outlines, XmlSerializer serializer) throws IOException {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        serializer.setOutput(output, null);
+        new OpWriter().write(outlines.getOpFile(), serializer);
+        return new String(output.toByteArray(), StandardCharsets.UTF_8);
+    }
+
+    /**
+     * Writes the OPML markup of the given {@link Outlines} in an output stream.
+     * @param outlines The outlines to write.
+     * @param output The output stream to write on.
+     * @param serializer The xml serializer to use.
+     * @throws IOException In case the writing fails.
+     */
+    public static void write(Outlines outlines, OutputStream output, XmlSerializer serializer) throws IOException {
+        serializer.setOutput(output, null);
+        new OpWriter().write(outlines.getOpFile(), serializer);
     }
 }
