@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.net.URL;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
@@ -44,7 +45,7 @@ public class OpReaderTests {
         parser.setInput(new StringReader(string));
         OpFile file = new OpReader().readFile(parser);
         Assert.assertArrayEquals(Arrays.asList(new OpOutline("Outline Text", "Outline Title",
-                "test", "http://example.org/xml", "http://example.org/html")).toArray(),
+                "test", new URL("http://example.org/xml"), new URL("http://example.org/html"))).toArray(),
                 file.getBody().getOutlines().toArray());
     }
 
