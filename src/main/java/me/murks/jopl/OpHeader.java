@@ -1,12 +1,12 @@
 package me.murks.jopl;
 
-import java.util.Calendar;
+import java.util.Date;
 
-public class OPHeader {
+public class OpHeader {
     private final String title;
-    private final Calendar dateCreated;
+    private final Date dateCreated;
 
-    public OPHeader(String newTitle, Calendar newDateCreated) {
+    public OpHeader(String newTitle, Date newDateCreated) {
         title = newTitle;
         dateCreated = newDateCreated;
     }
@@ -15,7 +15,7 @@ public class OPHeader {
         return title;
     }
 
-    public Calendar getDateCreated() {
+    public Date getDateCreated() {
         return dateCreated;
     }
 }
