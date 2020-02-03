@@ -13,7 +13,8 @@ class RFC822 {
         // replace nonstandard time zone identifier
         String str = string.replace("UT", "UTC").replace("Z", "UTC");
 
-        List<SimpleDateFormat> formats = Arrays.asList(new SimpleDateFormat("EEE, dd MMM yy HH:mm:ss z", Locale.ENGLISH),
+        List<SimpleDateFormat> formats = Arrays.asList(new SimpleDateFormat("EEE, dd MMM yy HH:mm:ss z", Locale.US),
+                new SimpleDateFormat("EEE, dd MMM yy HH:mm Z"),
                 new SimpleDateFormat("EEE, dd MMM yy HH:mm z"),
                 new SimpleDateFormat("dd MMM yy HH:mm:ss z"),
                 new SimpleDateFormat("dd MMM yy HH:mm z"));

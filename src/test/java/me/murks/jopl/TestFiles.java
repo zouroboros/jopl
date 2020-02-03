@@ -13,7 +13,8 @@ class TestFiles {
     public static final String titleTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><title>Test Title</title></head><body /></opml>";
 
     public static final Outlines dateCreatedOutlines = new Outlines(null, new Date(1580584261000L), Collections.emptyList());
-    public static final String dateCreatedTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><dateCreated>01 Feb 20 20:11:01 +0100</dateCreated></head><body /></opml>";
+    public static final String dateCreatedTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><dateCreated>" +
+            RFC822.formatDate(new Date(1580584261000L)) + "</dateCreated></head><body /></opml>";
 
     public static Outlines outlineTestOutlines;
 
