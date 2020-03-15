@@ -69,7 +69,7 @@ public class OpReader {
                 String type = parser.getAttributeValue(null, OpmlSymbols.Type.toString());
                 String htmlUrl = parser.getAttributeValue(null, OpmlSymbols.HtmlUrl.toString());
                 String xmlUrl = parser.getAttributeValue(null, OpmlSymbols.XmlUrl.toString());
-                outlines.add(new OpOutline(text, title, type, new URL(xmlUrl), new URL(htmlUrl)));
+                outlines.add(new OpOutline(text, title, type, xmlUrl, htmlUrl));
             }
             eventType = parser.next();
         }

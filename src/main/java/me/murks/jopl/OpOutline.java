@@ -10,10 +10,10 @@ public class OpOutline {
     private final String text;
     private final String title;
     private final String type;
-    private final URL xmlUrl;
-    private final URL htmlUrl;
+    private final String xmlUrl;
+    private final String htmlUrl;
 
-    public OpOutline(String newText, String newTitle, String newType, URL newXmlUrl, URL newHtmlUrl) {
+    public OpOutline(String newText, String newTitle, String newType, String newXmlUrl, String newHtmlUrl) {
         text = newText;
         title = newTitle;
         type = newType;
@@ -33,11 +33,11 @@ public class OpOutline {
         return type;
     }
 
-    public URL getXmlUrl() {
+    public String getXmlUrl() {
         return xmlUrl;
     }
 
-    public URL getHtmlUrl() {
+    public String getHtmlUrl() {
         return htmlUrl;
     }
 

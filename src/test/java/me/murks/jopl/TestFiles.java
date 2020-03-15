@@ -16,17 +16,9 @@ class TestFiles {
     public static final String dateCreatedTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head><dateCreated>" +
             RFC822.formatDate(new Date(1580584261000L)) + "</dateCreated></head><body /></opml>";
 
-    public static Outlines outlineTestOutlines;
-
-    static {
-        try {
-            outlineTestOutlines = new Outlines(null, null,
-                        Arrays.asList(new OpOutline("Outline Text", "Outline Title", "test",
-                                new URL("http://example.org/xml"), new URL("http://example.org/html"))));
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    public static Outlines outlineTestOutlines = new Outlines(null, null,
+                                                            Arrays.asList(new OpOutline("Outline Text", "Outline Title", "test",
+                                                                    "http://example.org/xml", "http://example.org/html")));
 
     public static final String outlineTest = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?><opml version=\"2.0\"><head /><body>" +
             "<outline title=\"Outline Title\" text=\"Outline Text\" type=\"test\" xmlUrl=\"http://example.org/xml\" htmlUrl=\"http://example.org/html\" />" +
@@ -51,5 +43,12 @@ class TestFiles {
             "    <outline text=\"The Kodakery\" title=\"The Kodakery\" type=\"rss\" xmlUrl=\"http://feeds.soundcloud.com/users/soundcloud:users:190739215/sounds.rss\" htmlUrl=\"http://soundcloud.com/the-kodakery\" />\n" +
             "    <outline text=\"This American Life\" title=\"This American Life\" type=\"rss\" xmlUrl=\"http://feed.thisamericanlife.org/talpodcast\" htmlUrl=\"https://www.thisamericanlife.org\" />\n" +
             "  </body>\n" +
+            "</opml>";
+
+    public static final String invalidUrl = "<?xml version='1.0' encoding='UTF-8' standalone='no' ?>\n" +
+            "<opml version=\"2.0\">\n" +
+            "<body>\n"+
+            "    <outline text=\"Classic Lenses Podcast\" title=\"Classic Lenses Podcast\" type=\"rss\" xmlUrl=\"https://classiclensespodcast.podbean.com/feed.xml\" htmlUrl=\"https://classiclensespodcast.podbean.com&lt;itunes:new-feed-url&gt;\" />\n"+
+            "  </body>\n"+
             "</opml>";
 }

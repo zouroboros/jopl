@@ -40,7 +40,7 @@ public class OpReaderTests {
         parser.setInput(new StringReader(TestFiles.outlineTest));
         OpFile file = new OpReader().readFile(parser);
         Assert.assertArrayEquals(Arrays.asList(new OpOutline("Outline Text", "Outline Title",
-                "test", new URL("http://example.org/xml"), new URL("http://example.org/html"))).toArray(),
+                "test", "http://example.org/xml", "http://example.org/html")).toArray(),
                 file.getBody().getOutlines().toArray());
     }
 
@@ -52,5 +52,16 @@ public class OpReaderTests {
         OpFile file = new OpReader().readFile(parser);
         Assert.assertEquals("AntennaPod Subscriptions", file.getHeader().getTitle());
         Assert.assertEquals(new Date(1580584261000l), file.getHeader().getDateCreated());
+    }
+
+    @Test
+    public void testInvalidUrl() throws XmlPullParserException, IOException, ParseException {
+        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+        XmlPullParser parser = factory.newPullParser();
+        parser.setInput(new StringReader(TestFiles.invalidUrl));
+        OpFile file = new OpReader().readFile(parser);
+        Assert.assertEquals("Invalid Url",
+                "https://classiclensespodcast.podbean.com<itunes:new-feed-url>",
+                file.getBody().getOutlines().get(0).getHtmlUrl());
     }
 }
