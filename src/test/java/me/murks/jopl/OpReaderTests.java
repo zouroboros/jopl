@@ -64,4 +64,23 @@ public class OpReaderTests {
                 "https://classiclensespodcast.podbean.com<itunes:new-feed-url>",
                 file.getBody().getOutlines().get(0).getHtmlUrl());
     }
+
+    @Test
+    public void unixTimeParseing() throws XmlPullParserException, IOException, ParseException {
+        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+        XmlPullParser parser = factory.newPullParser();
+        parser.setInput(new StringReader(TestFiles.unixTime));
+        OpFile file = new OpReader().readFile(parser);
+        Assert.assertEquals(new Date(1591992760121l), file.getHeader().getDateCreated());
+    }
+
+    @Test
+    public void testSpaRss() throws XmlPullParserException, IOException, ParseException {
+        XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+        XmlPullParser parser = factory.newPullParser();
+        parser.setInput(new StringReader(TestFiles.spaRssBackupFile));
+        OpFile file = new OpReader().readFile(parser);
+        Assert.assertEquals("spaRSS export", file.getHeader().getTitle());
+        Assert.assertEquals(new Date(1591992760121l), file.getHeader().getDateCreated());
+    }
 }

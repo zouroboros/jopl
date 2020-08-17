@@ -7,8 +7,8 @@ import java.util.*;
 /**
  * Class for working with RFC822 formatted dates.
  */
-class RFC822 {
-    public static Date readDate(String string) throws ParseException {
+class RFC822 implements IDateParser {
+    public Date parseDate(String string) throws ParseException {
 
         // replace nonstandard time zone identifier
         String str = string.replace("UT", "UTC").replace("Z", "UTC");

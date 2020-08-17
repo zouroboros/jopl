@@ -51,4 +51,51 @@ class TestFiles {
             "    <outline text=\"Classic Lenses Podcast\" title=\"Classic Lenses Podcast\" type=\"rss\" xmlUrl=\"https://classiclensespodcast.podbean.com/feed.xml\" htmlUrl=\"https://classiclensespodcast.podbean.com&lt;itunes:new-feed-url&gt;\" />\n"+
             "  </body>\n"+
             "</opml>";
+
+    public static final String unixTime = "<?xml version='1.0' encoding='utf-8'?>\n" +
+            "<opml version='1.1'>\n" +
+            "<head>\n" +
+            "<title>spaRSS export</title>\n" +
+            "<dateCreated>1591992760121</dateCreated>\n" +
+            "</head>\n" +
+            "<body>\n" +
+            "</body>\n" +
+            "</opml>";
+
+    public static final String spaRssBackupFile = "<?xml version='1.0' encoding='utf-8'?>\n" +
+            "<opml version='1.1'>\n" +
+            "<head>\n" +
+            "<title>spaRSS export</title>\n" +
+            "<dateCreated>1591992760121</dateCreated>\n" +
+            "</head>\n" +
+            "<body>\n" +
+            "\t<outline title='CrowdScience' type='rss' xmlUrl='https://podcasts.files.bbci.co.uk/p04d42rc.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='BadmintonWorld.tv' type='rss' xmlUrl='https://www.youtube.com/feeds/videos.xml?user=bwf' retrieveFullText='true'/>\n" +
+            "\t<outline title='Click' type='rss' xmlUrl='http://podcasts.files.bbci.co.uk/p002w6r2.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='TED Radio Hour' type='rss' xmlUrl='https://www.npr.org/rss/podcast.php?id=510298' retrieveFullText='true'/>\n" +
+            "\t<outline title='HARDtalk' type='rss' xmlUrl='https://podcasts.files.bbci.co.uk/p004t1s0.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='Live In Concert from NPR&#39;s All Songs Considered' type='rss' xmlUrl='https://www.npr.org/rss/podcast.php?id=510253' retrieveFullText='true'/>\n" +
+            "\t<outline title='Future Shock VPRO Tegenlicht' type='rss' xmlUrl='https://rs.vpro.nl/v3/api/feeds/podcast/POMS_S_VPRO_11660029?podtrac=true' retrieveFullText='true'/>\n" +
+            "\t<outline title='Zembla podcast' type='rss' xmlUrl='https://podcast.npo.nl/feed/zembla-podcast.xml' retrieveFullText='true'/>\n" +
+            "\t<outline title='The Documentary Podcast' type='rss' xmlUrl='https://podcasts.files.bbci.co.uk/p02nq0lx.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='Piano Jazz Shorts' type='rss' xmlUrl='https://www.npr.org/rss/podcast.php?id=510056' retrieveFullText='true'/>\n" +
+            "\t<outline title='Tiny Desk Concerts - Audio' type='rss' xmlUrl='https://www.npr.org/rss/podcast.php?id=510306' retrieveFullText='true'/>\n" +
+            "\t<outline title='Global News Podcast' type='rss' xmlUrl='https://podcasts.files.bbci.co.uk/p02nq0gn.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='The TED Interview' type='rss' xmlUrl='http://feeds.feedburner.com/TedInterview' retrieveFullText='true'/>\n" +
+            "\t<outline title='The Inquiry' type='rss' xmlUrl='https://podcasts.files.bbci.co.uk/p029399x.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='VPRO Zomergasten' type='rss' xmlUrl='http://podcast.npo.nl/feed/zomergasten.xml' retrieveFullText='true'/>\n" +
+            "\t<outline title='How To Fail With Elizabeth Day' type='rss' xmlUrl='https://feed.podbean.com/howtofail/feed.xml' retrieveFullText='true'/>\n" +
+            "\t<outline title='The Dissenter' type='rss' xmlUrl='https://anchor.fm/s/822ba20/podcast/rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='Nieuws RIVM' type='rss' xmlUrl='https://www.rivm.nl/nieuws/rss.xml' retrieveFullText='true'/>\n" +
+            "\t<outline title='The Numberphile Podcast' type='rss' xmlUrl='https://www.numberphile.com/podcast?format=RSS' retrieveFullText='true'/>\n" +
+            "\t<outline title='TED Talks Daily' type='rss' xmlUrl='http://feeds.feedburner.com/tedtalks_audio' retrieveFullText='true'/>\n" +
+            "\t<outline title='The Dispatch Podcast' type='rss' xmlUrl='https://thedispatch.sounder.fm/show/aLn9D/rss.xml' retrieveFullText='true'/>\n" +
+            "\t<outline title='GitLab System Status' type='rss' xmlUrl='https://status.gitlab.com/pages/5b36dc6502d06804c08349f7/rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='Digital Planet' type='rss' xmlUrl='https://podcasts.files.bbci.co.uk/p002w6r2.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='The Infinite Monkey Cage' type='rss' xmlUrl='https://podcasts.files.bbci.co.uk/b00snr0w.rss' retrieveFullText='true'/>\n" +
+            "\t<outline title='Hidden Brain' type='rss' xmlUrl='https://www.npr.org/rss/podcast.php?id=510308' retrieveFullText='true'/>\n" +
+            "\t<outline title='Echt Gebeurd' type='rss' xmlUrl='https://rss.art19.com/echt-gebeurd' retrieveFullText='true'/>\n" +
+            "\t<outline title='Reggae Moods Podcast' type='rss' xmlUrl='https://reggaemoods.podomatic.com/rss2.xml' retrieveFullText='true'/>\n" +
+            "</body>\n" +
+            "</opml>";
 }

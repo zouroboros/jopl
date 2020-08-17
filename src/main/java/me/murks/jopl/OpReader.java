@@ -51,7 +51,11 @@ public class OpReader {
                 if(OpmlSymbols.Title.isTag(parser.getName())) {
                     title = parser.nextText();
                 } else if(OpmlSymbols.DateCreated.isTag(parser.getName())) {
-                    dateCreated = RFC822.readDate(parser.nextText());
+                    try {
+                        dateCreated = OpmlDates.parseDate(parser.nextText());
+                    } catch (ParseException e) {
+
+                    }
                 }
 
             }
