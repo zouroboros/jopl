@@ -16,24 +16,3 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile group: 'net.sf.kxml', name: 'kxml2', version: '2.3.0'
 }
-
-publishing {
-    repositories {
-        maven {
-            name = "gitlab-maven"
-            url = uri("https://gitlab.com/api/v4/projects/16680782/packages/maven")
-            credentials(HttpHeaderCredentials) {
-                name = "Job-Token"
-                value = System.getenv("CI_JOB_TOKEN")
-            }
-            authentication {
-                header(HttpHeaderAuthentication)
-            }
-        }
-    }
-    publications {
-        gpr(MavenPublication) {
-            from(components.java)
-        }
-    }
-}
